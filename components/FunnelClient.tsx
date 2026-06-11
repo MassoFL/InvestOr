@@ -224,9 +224,6 @@ function ResultScreen({
 }: {
   profile: ReturnType<typeof computeProfile>;
 }) {
-  // Replace with your actual Calendly URL
-  const calendlyUrl = "https://calendly.com/votre-compte/appel-conseil";
-
   return (
     <div className="min-h-screen flex flex-col">
       <nav className="flex items-center justify-between px-6 py-4 bg-white border-b border-slate-100">
@@ -280,30 +277,15 @@ function ResultScreen({
             </div>
           )}
 
-          {/* CTA */}
+          {/* Message de clôture */}
           <div className="bg-slate-900 rounded-2xl p-6 text-center">
             <h2 className="text-white font-bold text-lg mb-2">
-              {profile.infoOnly
-                ? "Posez toutes vos questions à un conseiller"
-                : "Parlons de votre stratégie en détail"}
+              Un conseiller vous recontactera très prochainement
             </h2>
-            <p className="text-slate-400 text-sm mb-5">
-              {profile.infoOnly
-                ? "Un conseiller répond à toutes vos questions sur l'investissement — gratuitement, sans engagement, à votre rythme."
-                : "Un conseiller dédié analyse votre profil et vous propose un plan personnalisé — gratuitement, sans engagement."}
+            <p className="text-slate-400 text-sm">
+              Merci pour vos réponses. Notre équipe analyse votre profil et
+              prendra contact avec vous dans les meilleurs délais.
             </p>
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold rounded-full transition-colors"
-            >
-              Réserver mon appel gratuit
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <p className="text-slate-500 text-xs mt-3">Disponible en 24h · 100% gratuit</p>
           </div>
         </div>
       </main>
